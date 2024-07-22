@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+<head>
+    <title>Certificate Authority</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+    <header>
+        <h1 class="center header">Document Integrity Checker</h1>
+        <p class="center header">A webpage to verify the integrity & authenticity of documents sent by me over the Internet.
+    </header>
+    <main>
+    <h2 id="attachDocumentH2" class="center">Attach a document and click Verify</h2>
+
+    <form id="inputForm">
+    <fieldset>
+        <legend>Attach a File (<small>e.g. doc.pdf)</small></legend>
+        <label> </label>
+        <input id="claimedFile" name="claimedFile" type="file" autofocus>
+    </fieldset>
+    <div>
+        <button id="verifyBtn" type="button" value="Verify" onclick="runVerification()">Verify</button>
+    </div>
+    </form>
+    <h2 id="verdictHeader" class="center" style="display:none;">Verdict</h2>
+    <div>
+        <table align="center">
+            <tbody>
+            <tr><td><img id="verdictStatusIcon" style="display:none;" src="images/loading.gif" alt=" Awaiting for your input..." width="14" height="14"></td><td>&nbsp;</td><td id="verdictText" name="verdictText" style="display:none;"></td></tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+    <footer>
+        <p class="lightGrey"><img src="images/info-button.png" alt="Privacy Icon" width="14" height="14"> About: Every file created by me is signed using my private key. You may use this webpage, which utilizes my public key, to verify that the message was created by me and that no third party has not altered the file after I had sent it.</p>
+        <p class="lightGrey"><img src="images/lock.svg" alt="Privacy Icon" width="14" height="14"> Privacy Assurance: Thanks to Public key cryptography, Integrity checking is done on-device in your browser. No data is stored, associated, nor transmitted over the Internet — this means you can disconnect your device from the Internet and still use this website.</p>
+    </footer>
+</body>
+<script src="loadSignature.js"></script>
+<script src="verify.js"></script>
+</HTML>
