@@ -3,9 +3,11 @@ var verdictHeader = document.querySelector('h2#verdictHeader');
 var verdictStatusIcon = document.querySelector('img#verdictStatusIcon');
 var verdictText = document.querySelector('td#verdictText');
 var verdictFileName;
+var informativeMessageHeader = document.querySelector('h3#informativeMessageHeader');
+var informativeMessageContent = document.querySelector('p#informativeMessageContent');
 
 // Initializing the input elements for hiding later
-var attachDocumentH2 = document.querySelector('h2#attachDocumentH2');
+var attachFile = document.querySelector('h2#attachFile');
 var verifyBtn = document.querySelector('button#verifyBtn');
 var inputForm = document.querySelector('form#inputForm');
 
@@ -81,19 +83,23 @@ async function runVerification() {
     verdictHeader.setAttribute("style", "display: block;");
     verdictStatusIcon.setAttribute("style", "display: inline;");
     verdictText.setAttribute("style", "display: inline;");
-    attachDocumentH2.setAttribute("style", "display: none;");
+    informativeMessageHeader.setAttribute("style", "display: block;");
+    informativeMessageContent.setAttribute("style", "display: inline;");
+    attachFile.setAttribute("style", "display: none;");
     verifyBtn.setAttribute("style", "display: none;");
     inputForm.setAttribute("style", "display: none;");
     if (isValid == true) {
         verdictText.setAttribute("style", "color: green;");
         verdictText.innerHTML = 'The signature is valid for "' + verdictFileName + '".';
         verdictStatusIcon.setAttribute("src", "images/green_circle.svg");
+        informativeMessageContent.innerHTML = "The file's authenticity has been cryptographically verified. It was created by me and no third party changed it along the way.";
         verifyBtn.setAttribute("style", "display: none;");
     }
     else if (isValid == false) {
         verdictText.setAttribute("style", "color: red;");
-        verdictText.innerHTML = "The signature is invalid." + "<small>(for " + verdictFileName + ")</small>";
+        verdictText.innerHTML = 'The signature is invalid for "' + verdictFileName + '".';
         verdictStatusIcon.setAttribute("src", "images/red_circle.svg");
+        informativeMessageContent.innerHTML = "The file's authenticity could not be verified. It has been modified by a third party in between the time I created it and before it reached you.";
         verifyBtn.setAttribute("style", "display: none;");
     }
 }

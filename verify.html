@@ -9,11 +9,11 @@
 </head>
 <body>
     <header>
-        <h1 class="center header">Document Integrity Checker</h1>
-        <p class="center header">A webpage to verify the integrity & authenticity of documents sent by me over the Internet.
+        <h1 class="center header">File Integrity Checker</h1>
+        <p class="center header">A webpage to verify the integrity & authenticity of files sent by me over the Internet.</p>
     </header>
     <main>
-    <h2 id="attachDocumentH2" class="center">Attach a document and click Verify</h2>
+    <h2 id="attachFile" class="center">Attach a file and click Verify</h2>
 
     <form id="inputForm">
     <fieldset>
@@ -33,6 +33,9 @@
             </tbody>
         </table>
     </div>
+    <br>
+    <h3 id="informativeMessageHeader" class="center" style="display:none;">What Does This Mean?</h3>
+    <p id="informativeMessageContent" class="center" style="display:none;"></p>
 </main>
     <footer>
         <p class="lightGrey"><img src="images/info-button.png" alt="Privacy Icon" width="14" height="14"> About: Every file created by me is signed using my private key. You may use this webpage, which utilizes my public key, to verify that the message was created by me and that no third party has not altered the file after I had sent it.</p>
