@@ -13,11 +13,11 @@
         <p class="center header">A webpage to verify the integrity & authenticity of files sent by me over the Internet.</p>
     </header>
     <main>
-    <h2 id="attachFile" class="center">Attach a file and click Verify</h2>
+    <h2 id="attachFile" class="center">Attach a File and Click Verify</h2>
 
     <form id="inputForm">
     <fieldset>
-        <legend>Attach a File (<small>e.g. doc.pdf)</small></legend>
+        <legend><small>e.g. doc.pdf</small></legend>
         <label> </label>
         <input id="claimedFile" name="claimedFile" type="file" autofocus>
     </fieldset>
@@ -25,23 +25,13 @@
         <button id="verifyBtn" type="button" value="Verify" onclick="runVerification()">Verify</button>
     </div>
     </form>
-    <h2 id="verdictHeader" class="center" style="display:none;">Verdict</h2>
-    <div>
-        <table align="center">
-            <tbody>
-            <tr><td><img id="verdictStatusIcon" style="display:none;" src="images/loading.gif" alt=" Awaiting for your input..." width="14" height="14"></td><td>&nbsp;</td><td id="verdictText" name="verdictText" style="display:none;"></td></tr>
-            </tbody>
-        </table>
-    </div>
-    <br>
-    <h3 id="informativeMessageHeader" class="center" style="display:none;">What Does This Mean?</h3>
-    <p id="informativeMessageContent" class="center" style="display:none;"></p>
 </main>
     <footer>
-        <p class="lightGrey"><img src="images/info-button.png" alt="Privacy Icon" width="14" height="14"> About: every file created by me is signed using my private key. You may use this webpage, which utilizes my public key, to verify that the message was created by me, and that no third party has altered the file after I had created it.</p>
-        <p class="lightGrey"><img src="images/lock.svg" alt="Privacy Icon" width="14" height="14"> Privacy Assurance: thanks to public key cryptography, integrity checking is done on-device in your browser. No data is stored, associated, or transmitted over the Internet — this means you can disconnect your device from the Internet and still use this website.</p>
+        <p class="lightGrey"><img src="images/info-button.png" alt="Privacy Icon" width="14" height="14">&nbsp;&nbsp;About: Every file created by me is signed using my private key. You may use this webpage, which utilizes my public key, to verify that the message was created by me, and that no third party has altered the file after I had created it.</p>
+        <p class="lightGrey"><img src="images/lock.svg" alt="Privacy Icon" width="14" height="14">&nbsp;&nbsp;Privacy Assurance: Thanks to public key cryptography, integrity checking is done on-device in your browser. No data is stored, associated, or transmitted over the Internet — this means you can disconnect your device from the Internet and still use this website.</p>
     </footer>
 </body>
 <script src="loadSignature.js"></script>
+<script src="verdictMain.js"></script>
 <script src="verify.js"></script>
 </HTML>
